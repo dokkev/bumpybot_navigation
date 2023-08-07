@@ -1,0 +1,33 @@
+<launch>
+
+<!-- Arguments -->
+<arg name ="teleop" default="true"/>
+<arg name="cmd_vel_topic" default="gazebo/cmd_vel" />
+<arg name="odom_topic" default="odom" />
+<arg name="base_frame" default="base_link"/>
+<arg name="odom_frame" default="odom"/>
+<arg name="scan" default="scan"/>
+<arg name ="rviz" default="true"/>
+
+<!-- SLAM: Slam_toolbox -->
+<node pkg="slam_toolbox" type="async_slam_toolbox_node" name="slam_toolbox" output="screen">
+    <rosparam command="load" file="$(find slam_toolbox)/config/mapper_params_online_async.yaml" />
+    <remap from="scan" to="$(arg scan)"/>
+    <param name="odom_frame" value="$(arg odom_frame)"/>
+    <param name="base_frame" value="$(arg base_frame)"/>
+</node>
+
+<!-- Move Base -->
+<include file="$(find bumpybot_navigation)/launch/move_base.launch">
+    <arg name="odom_topic" value="$(arg odom_topic)"/>
+    <arg name="cmd_vel_topic" value="$(arg cmd_vel_topic)"/>
+</include>
+
+
+  <!-- Rviz -->
+  <group> 
+    <node pkg="rviz" type="rviz" name="rviz" 
+          args="-d $(find bumpybot_navigation)/config/navigation.rviz"/>
+  </group>
+
+</launch>
