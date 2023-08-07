@@ -14,11 +14,10 @@
   <node pkg="rtabmap_odom" type="icp_odometry" name="icp_odometry">
     <param name="odom_frame_id" value="odom"/>
     <param name="frame_id" value="base_link"/>
-
   </node>
 
 
-  
+
 
   <!-- We just use odometry without rtabmap node, so set a static /map->/odom
        transform so that rviz config below works out-of-the-box -->
