@@ -70,23 +70,17 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        body_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
           Value: true
         kinect_1_lense_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        kinect_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        kinect_2_lense_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        kinect_2_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -124,13 +118,11 @@ Visualization Manager:
         All Enabled: false
         base_link:
           Value: true
+        body_link:
+          Value: false
+        camera_link:
+          Value: false
         kinect_1_lense_link:
-          Value: false
-        kinect_1_link:
-          Value: false
-        kinect_2_lense_link:
-          Value: false
-        kinect_2_link:
           Value: false
         lidar_link:
           Value: false
@@ -151,20 +143,18 @@ Visualization Manager:
       Tree:
         odom:
           base_link:
-            kinect_1_link:
-              kinect_1_lense_link:
+            body_link:
+              camera_link:
+                kinect_1_lense_link:
+                  {}
+              lidar_link:
                 {}
-            kinect_2_link:
-              kinect_2_lense_link:
+              wheel0:
                 {}
-            lidar_link:
-              {}
-            wheel0:
-              {}
-            wheel1:
-              {}
-            wheel2:
-              {}
+              wheel1:
+                {}
+              wheel2:
+                {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -382,7 +372,7 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 77.51274871826172
+      Scale: 790.231689453125
       Target Frame: <Fixed Frame>
       X: 0
       Y: 0
