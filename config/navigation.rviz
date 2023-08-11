@@ -60,6 +60,276 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
+        8x750roller:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_10:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_11:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_12:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_13:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_14:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_15:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_16:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_17:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_18:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_19:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_20:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_21:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_22:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_23:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_24:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_25:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_26:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_27:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_28:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_29:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_30:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_31:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_32:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_33:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_34:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_35:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_36:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_37:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_38:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_39:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_40:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_41:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_42:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_43:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_44:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_45:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_46:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_47:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_48:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_49:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_50:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_51:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_52:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_53:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_54:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_8:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        8x750roller_9:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
@@ -74,17 +344,22 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         kinect_1_lense_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        kinect_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         lidar_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lidar_mount:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -114,21 +389,131 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
+        8x750roller:
+          Value: false
+        8x750roller_10:
+          Value: false
+        8x750roller_11:
+          Value: false
+        8x750roller_12:
+          Value: false
+        8x750roller_13:
+          Value: false
+        8x750roller_14:
+          Value: false
+        8x750roller_15:
+          Value: false
+        8x750roller_16:
+          Value: false
+        8x750roller_17:
+          Value: false
+        8x750roller_18:
+          Value: false
+        8x750roller_19:
+          Value: false
+        8x750roller_2:
+          Value: false
+        8x750roller_20:
+          Value: false
+        8x750roller_21:
+          Value: false
+        8x750roller_22:
+          Value: false
+        8x750roller_23:
+          Value: false
+        8x750roller_24:
+          Value: false
+        8x750roller_25:
+          Value: false
+        8x750roller_26:
+          Value: false
+        8x750roller_27:
+          Value: false
+        8x750roller_28:
+          Value: false
+        8x750roller_29:
+          Value: false
+        8x750roller_3:
+          Value: false
+        8x750roller_30:
+          Value: false
+        8x750roller_31:
+          Value: false
+        8x750roller_32:
+          Value: false
+        8x750roller_33:
+          Value: false
+        8x750roller_34:
+          Value: false
+        8x750roller_35:
+          Value: false
+        8x750roller_36:
+          Value: false
+        8x750roller_37:
+          Value: false
+        8x750roller_38:
+          Value: false
+        8x750roller_39:
+          Value: false
+        8x750roller_4:
+          Value: false
+        8x750roller_40:
+          Value: false
+        8x750roller_41:
+          Value: false
+        8x750roller_42:
+          Value: false
+        8x750roller_43:
+          Value: false
+        8x750roller_44:
+          Value: false
+        8x750roller_45:
+          Value: false
+        8x750roller_46:
+          Value: false
+        8x750roller_47:
+          Value: false
+        8x750roller_48:
+          Value: false
+        8x750roller_49:
+          Value: false
+        8x750roller_5:
+          Value: false
+        8x750roller_50:
+          Value: false
+        8x750roller_51:
+          Value: false
+        8x750roller_52:
+          Value: false
+        8x750roller_53:
+          Value: false
+        8x750roller_54:
+          Value: false
+        8x750roller_6:
+          Value: false
+        8x750roller_7:
+          Value: false
+        8x750roller_8:
+          Value: false
+        8x750roller_9:
+          Value: false
         All Enabled: false
         base_link:
           Value: true
         body_link:
           Value: false
-        camera_link:
-          Value: true
         kinect_1_lense_link:
+          Value: false
+        kinect_1_link:
           Value: false
         lidar_link:
           Value: false
+        lidar_mount:
+          Value: false
         map:
-          Value: true
+          Value: false
         odom:
-          Value: true
+          Value: false
         wheel0:
           Value: false
         wheel1:
@@ -146,16 +531,122 @@ Visualization Manager:
           odom:
             base_link:
               body_link:
-                camera_link:
-                  kinect_1_lense_link:
-                    {}
-                lidar_link:
-                  {}
                 wheel0:
-                  {}
+                  8x750roller:
+                    {}
+                  8x750roller_10:
+                    {}
+                  8x750roller_11:
+                    {}
+                  8x750roller_12:
+                    {}
+                  8x750roller_13:
+                    {}
+                  8x750roller_14:
+                    {}
+                  8x750roller_15:
+                    {}
+                  8x750roller_16:
+                    {}
+                  8x750roller_17:
+                    {}
+                  8x750roller_18:
+                    {}
+                  8x750roller_2:
+                    {}
+                  8x750roller_3:
+                    {}
+                  8x750roller_4:
+                    {}
+                  8x750roller_5:
+                    {}
+                  8x750roller_6:
+                    {}
+                  8x750roller_7:
+                    {}
+                  8x750roller_8:
+                    {}
+                  8x750roller_9:
+                    {}
                 wheel1:
-                  {}
+                  8x750roller_19:
+                    {}
+                  8x750roller_20:
+                    {}
+                  8x750roller_21:
+                    {}
+                  8x750roller_22:
+                    {}
+                  8x750roller_23:
+                    {}
+                  8x750roller_24:
+                    {}
+                  8x750roller_25:
+                    {}
+                  8x750roller_26:
+                    {}
+                  8x750roller_27:
+                    {}
+                  8x750roller_28:
+                    {}
+                  8x750roller_29:
+                    {}
+                  8x750roller_30:
+                    {}
+                  8x750roller_31:
+                    {}
+                  8x750roller_32:
+                    {}
+                  8x750roller_33:
+                    {}
+                  8x750roller_34:
+                    {}
+                  8x750roller_35:
+                    {}
+                  8x750roller_36:
+                    {}
                 wheel2:
+                  8x750roller_37:
+                    {}
+                  8x750roller_38:
+                    {}
+                  8x750roller_39:
+                    {}
+                  8x750roller_40:
+                    {}
+                  8x750roller_41:
+                    {}
+                  8x750roller_42:
+                    {}
+                  8x750roller_43:
+                    {}
+                  8x750roller_44:
+                    {}
+                  8x750roller_45:
+                    {}
+                  8x750roller_46:
+                    {}
+                  8x750roller_47:
+                    {}
+                  8x750roller_48:
+                    {}
+                  8x750roller_49:
+                    {}
+                  8x750roller_50:
+                    {}
+                  8x750roller_51:
+                    {}
+                  8x750roller_52:
+                    {}
+                  8x750roller_53:
+                    {}
+                  8x750roller_54:
+                    {}
+              kinect_1_link:
+                kinect_1_lense_link:
+                  {}
+              lidar_mount:
+                lidar_link:
                   {}
       Update Interval: 0
       Value: true
@@ -374,7 +865,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -1.5707963705062866
+      Angle: -0.13579942286014557
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -384,10 +875,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 81.3999252319336
+      Scale: 152.7396697998047
       Target Frame: <Fixed Frame>
-      X: 0
-      Y: 0
+      X: -1.5663728713989258
+      Y: 3.2192323207855225
     Saved: ~
 Window Geometry:
   Displays:
@@ -397,7 +888,7 @@ Window Geometry:
   Hide Right Dock: true
   Image:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000016a0000039efc0200000007fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000039e000000c900fffffffb0000000a0049006d0061006700650000000317000000cc0000001600fffffffb0000000a0049006d0061006700650000000330000000ce0000000000000000000000010000010f000003a0fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730000000043000003a0000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a00000041800fffffffb0000000800540069006d006501000000000000045000000000000000000000038f0000039e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000016a0000039efc0200000007fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000039e000000c900fffffffb0000000a0049006d0061006700650000000317000000cc0000001600fffffffb0000000a0049006d0061006700650000000330000000ce0000000000000000000000010000010f000003a0fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730000000043000003a0000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a00000041800fffffffb0000000800540069006d00650100000000000004500000000000000000000005c80000039e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -406,6 +897,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: true
-  Width: 1279
+  Width: 1848
   X: 72
   Y: 27
