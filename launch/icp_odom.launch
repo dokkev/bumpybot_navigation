@@ -11,7 +11,7 @@
   <arg name="icp_odom_topic" default="odom_icp"/>
   <arg name="filtered_odom_topic" default="odom"/>
   <arg name="base_frame_id" default="base_link"/>
-  <arg name="alpha_value" default="0.5"/>
+  <arg name="alpha_value" default="0.18"/>
 
 
   <group unless="$(arg filter)">
@@ -48,7 +48,7 @@
     </node>
 
      <!-- Send TF from odom_filtered to odom -->
-    <node pkg="tf" type="static_transform_publisher" name="icp_odom_to_odom" args="0 0 0 0 0 0 odom_filtered odom 100" />
+    <!-- <node pkg="tf" type="static_transform_publisher" name="icp_odom_to_odom" args="0 0 0 0 0 0 odom_filtered odom 100" /> -->
     <!-- <node pkg="tf" type="static_transform_publisher" name="icp_odom_to_odom" args="0 0 0 0 0 0 odom base_link 100" /> -->
   </group>
 

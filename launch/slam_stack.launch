@@ -2,12 +2,12 @@
 
 <!-- Arguments -->
 <arg name ="teleop" default="true"/>
-<arg name="cmd_vel_topic" default="gazebo/cmd_vel" />
+<arg name="cmd_vel_topic" default="trikey/base_controller/cmd_vel" />
 <arg name="odom_topic" default="odom" />
 <arg name="base_frame" default="base_link"/>
 <arg name="odom_frame" default="odom"/>
 <arg name="scan" default="scan"/>
-<arg name ="rviz" default="true"/>
+<arg name ="rviz" default="false"/>
 
 <!-- SLAM: Slam_toolbox -->
 <node pkg="slam_toolbox" type="async_slam_toolbox_node" name="slam_toolbox" output="screen">
@@ -25,7 +25,7 @@
 
 
   <!-- Rviz -->
-  <group> 
+ <group if ="$(arg rviz)">
     <node pkg="rviz" type="rviz" name="rviz" 
           args="-d $(find bumpybot_navigation)/config/navigation.rviz"/>
   </group>
