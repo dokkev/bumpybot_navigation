@@ -2,12 +2,12 @@
 
 <!-- Arguments -->
 <arg name ="teleop" default="true"/>
-<arg name="cmd_vel_topic" default="trikey/base_controller/cmd_vel" />
+<arg name="cmd_vel_topic" default="cmd_vel" />
 <arg name="odom_topic" default="odom" />
 <arg name="base_frame" default="base_link"/>
 <arg name="odom_frame" default="odom"/>
 <arg name="scan" default="scan"/>
-<arg name ="rviz" default="false"/>
+<arg name ="rviz" default="true"/>
 
 <!-- SLAM: Slam_toolbox -->
 <node pkg="slam_toolbox" type="async_slam_toolbox_node" name="slam_toolbox" output="screen">
@@ -23,6 +23,8 @@
     <arg name="cmd_vel_topic" value="$(arg cmd_vel_topic)"/>
 </include>
 
+<!-- Vel smoother -->
+<node name="velocity_smoother" pkg="bumpybot_teleop" type="velocity_smoother.py" />
 
   <!-- Rviz -->
  <group if ="$(arg rviz)">
