@@ -1,11 +1,5 @@
 <launch>
 
-  <!-- Odom Node -->
-  <node pkg="rtabmap_odom" type="icp_odometry" name="icp_odometry">
-    <param name="odom_frame_id" value="odom"/>
-    <param name="frame_id" value="base_link"/>
-  </node>
-
 
 
   <node pkg="slam_toolbox" type="async_slam_toolbox_node" name="slam_toolbox" output="screen">

@@ -6,7 +6,7 @@ map_type: voxel
 
 obstacle_layer:
     origin_z: -0.1
-    z_resolution: 1.8 #1.5 This must be higher than the z coordinate of the mounted lidar
+    z_resolution: 1.5 # This must be higher than the z coordinate of the mounted lidar
     z_voxels: 1 
     obstacle_range: 10.0 #10.0
     raytrace_range: 15.0 #15.0
