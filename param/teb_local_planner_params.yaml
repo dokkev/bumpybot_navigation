@@ -1,4 +1,4 @@
-# https://docs.movel.ai/new-collection/seirios-rns/documentation/teb-tuning-guide
+# http://wiki.ros.org/teb_local_planner
 # https://mowito-navstack.readthedocs.io/en/latest/step_5c.html
  
 TebLocalPlannerROS:
@@ -7,11 +7,11 @@ TebLocalPlannerROS:
   map_frame: map
       
   # Robot Configuration Parameters. X is forward direction for the Bumpybot.
-  max_vel_x: 0.2
+  max_vel_x: 0.5
   max_vel_y: 0.0
   max_vel_x_backwards: 0.2
   max_vel_y_backwards: 0.0
-  max_vel_theta: 0.3
+  max_vel_theta: 1.0
   acc_lim_x: 0.2
   acc_lim_y: 0.0
   acc_lim_theta: 0.5 #0.5, 0.26
@@ -29,8 +29,8 @@ TebLocalPlannerROS:
     # vertices: [ [0.26, 0.26], [0.26, -0.26], [-0.26, -0.26], [-0.26,0.26] ]   # for type "polygon"
 
   # GoalTolerance
-  xy_goal_tolerance: 0.05 # m
-  yaw_goal_tolerance: 0.2 # rad
+  xy_goal_tolerance: 0.1 # m
+  yaw_goal_tolerance: 0.3 # rad
   free_goal_vel: False # the robot can arrive at the goal with maximum speed
 
   # Trajectory
@@ -43,8 +43,8 @@ TebLocalPlannerROS:
 
       
   # Obstacles Parameters
-  min_obstacle_dist: 0.05
-  inflation_dist: 0.0
+  min_obstacle_dist: 0.1
+  inflation_dist: 0.2
   dynamic_obstacle_inflation_dist: 0.05
   include_costmap_obstacles: True
   costmap_obstacles_behind_robot_dist: 0.1
@@ -91,4 +91,4 @@ TebLocalPlannerROS:
   via_points_ordered: False #adhere to order of via points
 
   #Feedback
-  publish_feedback: True #false
+  publish_feedback: false #false
