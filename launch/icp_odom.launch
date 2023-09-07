@@ -7,14 +7,7 @@
 
     <arg name ="rviz" default="false"/>
     <arg name="filter" default="true"/>
-    <arg name="noetic" default="true"/>
-
-    <group if ="$(arg noetic)">
-      <arg name="odom_pkg_name" default="rtabmap_odom"/>
-    </group>
-    <group unless ="$(arg noetic)">
-      <arg name="odom_pkg_name" default="rtabmap_ros"/>
-    </group>
+    <arg name="noetic" />
 
     <!-- Topic Name -->
     <arg name="icp_odom_topic" default="odom_icp"/>
