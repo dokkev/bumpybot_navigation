@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<!-- Launch Arguments -->
+<arg name="xbox"                    default="false"/>
+<arg name="nodelets"                default="true"/>
+<arg name="tf_prefix"               default="" />  
+
+<!-- Camera Parameters Arguments -->
+<arg name="depth_enabled"           default="true" />
+<arg name="depth_mode"              default="WFOV_UNBINNED" /> 
+<arg name="depth_unit"              default="16UC1" />          <!-- Depth distance units. Options are: "32FC1" (32 bit float metre) or "16UC1" (16 bit integer millimetre) --> 
+<arg name="color_enabled"           default="true" />
+<arg name="color_format"            default="bgra" /> 
+<arg name="fps"                     default="10" />
+<arg name="point_cloud"             default="false" />
+<arg name="rgb_point_cloud"         default="false" /> 
+<arg name="calibration_url"         default="" />               <!-- Load intrinsic calibration from specific URL (default: "file://$HOME/.ros/camera_info/"") -->    
+
+<!-- Processing Modules for Nodelets-->
+<arg name="rgb_processing"                  default="true"  />
+<arg name="debayer_processing"              default="false" />
+<arg name="ir_processing"                   default="true" />
+<arg name="depth_processing"                default="true" />
+<arg name="depth_registered_processing"     default="true" />
+<arg name="disparity_processing"            default="false" />
+<arg name="disparity_registered_processing" default="false" />
+<arg name="hw_registered_processing"        default="true" if="$(arg depth_registration)" />
+<arg name="sw_registered_processing"        default="false" if="$(arg depth_registration)" />
+<arg name="hw_registered_processing"        default="false" unless="$(arg depth_registration)" />
+<arg name="sw_registered_processing"        default="true" unless="$(arg depth_registration)" />
+
+
+<!-- Trikey Base Controller -->
+<include file="$(find trikey_base_controller)/launch/trikey_base_controller.launch">
+    <arg name="xbox" value="$(arg xbox)"/>
+</include>
+
+<!-- Azure Kinect ROS -->
+<group if="$(arg nodelets)">
+    <include file="$(find azure_kinect_ros_driver)/launch/kinect_rgbd.launch">
+        <arg name="depth_enabled"           value="$(arg depth_enabled)" />
+        <arg name="depth_mode"              value="$(arg depth_mode)" />
+        <arg name="depth_unit"              value="$(arg depth_unit)" />
+        <arg name="color_enabled"           value="$(arg color_enabled)" />
+        <arg name="color_format"            value="$(arg color_format)" />
+        <arg name="fps"                     value="$(arg fps)" />
+        <arg name="point_cloud"             value="$(arg point_cloud)" />
+        <arg name="rgb_point_cloud"         value="$(arg rgb_point_cloud)" />
+        <arg name="calibration_url"         value="$(arg calibration_url)" />
+
+        <arg name="rgb_processing"                  value="$(arg rgb_processing)" />
+        <arg name="debayer_processing"              value="$(arg debayer_processing)" />
+        <arg name="ir_processing"                   value="$(arg ir_processing)" />
+        <arg name="depth_processing"                value="$(arg depth_processing)" />
+        <arg name="depth_registered_processing"     value="$(arg depth_registered_processing)" />
+        <arg name="disparity_processing"            value="$(arg disparity_processing)" />
+        <arg name="disparity_registered_processing" value="$(arg disparity_registered_processing)" />
+        <arg name="hw_registered_processing"        value="$(arg hw_registered_processing)" />
+        <arg name="sw_registered_processing"        value="$(arg sw_registered_processing)" />
+
+    </include>
+</group>
+
+<group unless="$(arg nodelets)">
+    <include file="$(find azure_kinect_ros_driver)/launch/driver.launch">
+        <arg name="depth_enabled"           value="$(arg depth_enabled)" />
+        <arg name="depth_mode"              value="$(arg depth_mode)" />
+        <arg name="depth_unit"              value="$(arg depth_unit)" />
+        <arg name="color_enabled"           value="$(arg color_enabled)" />
+        <arg name="color_format"            value="$(arg color_format)" />
+        <arg name="fps"                     value="$(arg fps)" />
+        <arg name="point_cloud"             value="$(arg point_cloud)" />
+        <arg name="rgb_point_cloud"         value="$(arg rgb_point_cloud)" />
+        <arg name="calibration_url"         value="$(arg calibration_url)" />
+    </include>
+
+</group>
+
+
+
+</launch>
