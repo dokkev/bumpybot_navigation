@@ -7,7 +7,7 @@
 
     <arg name ="rviz" default="false"/>
     <arg name="filter" default="true"/>
-    <arg name="noetic" />
+    <arg name="noetic" default=""/>
 
     <!-- Topic Name -->
     <arg name="icp_odom_topic" default="odom_icp"/>
