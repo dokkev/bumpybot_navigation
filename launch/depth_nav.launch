@@ -7,7 +7,7 @@
 <arg name="nodelets"                default="true"/>
 <arg name="tf_prefix"               default="" />
 <arg name="enable_slam"             default="false" />
-<arg name="noetic"                  default="true" />        <!-- Set to false if launching this in BumpyBot Comupter-->
+<arg name="noetic"                  default="false" />        <!-- Set to false if launching this in BumpyBot Comupter-->
 <arg name="depth_registration"      default="true"      doc="Hardware depth registration" />
 <arg name="num_worker_threads"      default="4"         doc="Worker threads for the nodelet manager" />
 
