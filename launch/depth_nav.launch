@@ -42,7 +42,7 @@
     <arg name="xbox" value="$(arg xbox)"/>
 </include>
 
-<!-- Azure Kinect ROS -->
+<!-- Azure Kinect ROS Nodelets -->
 <group if="$(arg nodelets)">
     <include file="$(find azure_kinect_ros_driver)/launch/kinect_rgbd.launch">
         <arg name="depth_enabled"           value="$(arg depth_enabled)" />
@@ -64,10 +64,10 @@
         <arg name="disparity_registered_processing" value="$(arg disparity_registered_processing)" />
         <arg name="hw_registered_processing"        value="$(arg hw_registered_processing)" />
         <arg name="sw_registered_processing"        value="$(arg sw_registered_processing)" />
-
     </include>
 </group>
 
+<!-- Azure Kinect ROS -->
 <group unless="$(arg nodelets)">
     <include file="$(find azure_kinect_ros_driver)/launch/driver.launch">
         <arg name="depth_enabled"           value="$(arg depth_enabled)" />
@@ -82,6 +82,7 @@
     </include>
 </group>
 
+<!-- SLAM Toolbox -->
 <group if="$(arg enable_slam)">
     <include file="$(find bumpybot_navigation)/launch/slam_toolbox.launch">
         <arg name="odom_frame" value="$(arg odom_frame)" />
