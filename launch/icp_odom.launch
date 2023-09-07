@@ -7,6 +7,14 @@
 
     <arg name ="rviz" default="false"/>
     <arg name="filter" default="true"/>
+    <arg name="noetic" default="true"/>
+
+    <group if ="$(arg noetic)">
+      <arg name="odom_pkg_name" default="rtabmap_odom"/>
+    </group>
+    <group unless ="$(arg noetic)">
+      <arg name="odom_pkg_name" default="rtabmap_ros"/>
+    </group>
 
     <!-- Topic Name -->
     <arg name="icp_odom_topic" default="odom_icp"/>
@@ -25,43 +33,85 @@
     <arg name="publish_fitered_tf" default="true"/>
 
 
-  <group if="$(arg filter)">
 
-    <!-- ICP Node -->
-    <node pkg="rtabmap_odom" type="icp_odometry" name="icp_odometry">
-      <remap from="odom" to="$(arg icp_odom_topic)"/> <!-- ROSTOPIC: /odom => /odom_icp -->
-      <param name="frame_id" value="$(arg base_frame_id)"/>
-      <param name="publish_tf" value="false"/>
-    </node>
+  <group if="$(arg noetic)"> 
+    <group if="$(arg filter)">
 
-    <!-- Load Params for odom_lpf node -->
+      <!-- ICP Node -->
+      <node pkg="rtabmap_odom" type="icp_odometry" name="icp_odometry">
+        <remap from="odom" to="$(arg icp_odom_topic)"/> <!-- ROSTOPIC: /odom => /odom_icp -->
+        <param name="frame_id" value="$(arg base_frame_id)"/>
+        <param name="publish_tf" value="false"/>
+      </node>
+
+      <!-- Load Params for odom_lpf node -->
 
 
-    <!-- Filter Node -->
-    <node name="odom_lpf" pkg="trikey_base_controller" type="odom_lpf">
-      <param name="lpf_alpha" value="$(arg alpha_value)"/>
-      <param name="publsih_filtered_tf" value="$(arg publish_filtered_tf)"/>
+      <!-- Filter Node -->
+      <node name="odom_lpf" pkg="trikey_base_controller" type="odom_lpf">
+        <param name="lpf_alpha" value="$(arg alpha_value)"/>
+        <param name="publsih_filtered_tf" value="$(arg publish_filtered_tf)"/>
 
-      <param name="raw_odom_topic" value="$(arg icp_odom_topic)"/>
-      <param name="filtered_odom_topic" value="$(arg filtered_icp_odom_topic)"/>
+        <param name="raw_odom_topic" value="$(arg icp_odom_topic)"/>
+        <param name="filtered_odom_topic" value="$(arg filtered_icp_odom_topic)"/>
 
-      <param name="base_frame_id" value="$(arg base_frame_id)"/>
-      <param name="filtered_odom_frame_id" value="$(arg filtered_icp_odom_frame_id)"/>
-    </node>
+        <param name="base_frame_id" value="$(arg base_frame_id)"/>
+        <param name="filtered_odom_frame_id" value="$(arg filtered_icp_odom_frame_id)"/>
+      </node>
 
+    </group>
+
+
+    <group unless="$(arg filter)">
+      <!-- ICP Node -->
+      <node pkg="rtabmap_odom" type="icp_odometry" name="icp_odometry">
+        <remap from="odom" to="$(arg icp_odom_topic)"/> <!-- ROSTOPIC: /odom => /odom_icp -->
+        <param name="odom_frame_id" value="$(arg icp_odom_frame_id)"/>
+        <param name="frame_id" value="$(arg base_frame_id)"/>
+        <param name="publish_tf" value="true"/>
+      </node>    
+    </group>
   </group>
 
 
-  <group unless="$(arg filter)">
-    <!-- ICP Node -->
-    <node pkg="rtabmap_odom" type="icp_odometry" name="icp_odometry">
-      <remap from="odom" to="$(arg icp_odom_topic)"/> <!-- ROSTOPIC: /odom => /odom_icp -->
-      <param name="odom_frame_id" value="$(arg icp_odom_frame_id)"/>
-      <param name="frame_id" value="$(arg base_frame_id)"/>
-      <param name="publish_tf" value="true"/>
-    </node>    
-  </group>
+  <group unless="$(arg noetic)"> 
+    <group if="$(arg filter)">
 
+      <!-- ICP Node -->
+      <node pkg="rtabmap_ros" type="icp_odometry" name="icp_odometry">
+        <remap from="odom" to="$(arg icp_odom_topic)"/> <!-- ROSTOPIC: /odom => /odom_icp -->
+        <param name="frame_id" value="$(arg base_frame_id)"/>
+        <param name="publish_tf" value="false"/>
+      </node>
+
+      <!-- Load Params for odom_lpf node -->
+
+
+      <!-- Filter Node -->
+      <node name="odom_lpf" pkg="trikey_base_controller" type="odom_lpf">
+        <param name="lpf_alpha" value="$(arg alpha_value)"/>
+        <param name="publsih_filtered_tf" value="$(arg publish_filtered_tf)"/>
+
+        <param name="raw_odom_topic" value="$(arg icp_odom_topic)"/>
+        <param name="filtered_odom_topic" value="$(arg filtered_icp_odom_topic)"/>
+
+        <param name="base_frame_id" value="$(arg base_frame_id)"/>
+        <param name="filtered_odom_frame_id" value="$(arg filtered_icp_odom_frame_id)"/>
+      </node>
+
+    </group>
+
+
+    <group unless="$(arg filter)">
+      <!-- ICP Node -->
+      <node pkg="rtabmap_ros" type="icp_odometry" name="icp_odometry">
+        <remap from="odom" to="$(arg icp_odom_topic)"/> <!-- ROSTOPIC: /odom => /odom_icp -->
+        <param name="odom_frame_id" value="$(arg icp_odom_frame_id)"/>
+        <param name="frame_id" value="$(arg base_frame_id)"/>
+        <param name="publish_tf" value="true"/>
+      </node>    
+    </group>
+  </group>
 
 
 
