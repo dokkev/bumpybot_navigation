@@ -5,7 +5,12 @@
 <!-- Launch Arguments -->
 <arg name="xbox"                    default="false"/>
 <arg name="nodelets"                default="true"/>
-<arg name="tf_prefix"               default="" />  
+<arg name="tf_prefix"               default="" />
+<arg name="enable_slam"             default="false" />
+
+<!-- Nav Arguments -->
+<arg name="odom_frame"              default="odom" />
+<arg name="base_frame"              default="base_link" />
 
 <!-- Camera Parameters Arguments -->
 <arg name="depth_enabled"           default="true" />
@@ -75,9 +80,14 @@
         <arg name="rgb_point_cloud"         value="$(arg rgb_point_cloud)" />
         <arg name="calibration_url"         value="$(arg calibration_url)" />
     </include>
-
 </group>
 
+<group if="$(arg enable_slam)">
+    <include file="$(find bumpybot_navigation)/launch/slam_toolbox.launch">
+        <arg name="odom_frame" value="$(arg odom_frame)" />
+        <arg name="base_frame" value="$(arg base_frame)" />  
+    </include>
+</group>
 
 
 </launch>
