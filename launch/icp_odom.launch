@@ -38,10 +38,8 @@
       </node>
 
       <!-- Load Params for odom_lpf node -->
-
-
       <!-- Filter Node -->
-      <node name="odom_lpf" pkg="trikey_base_controller" type="odom_lpf">
+      <!-- <node name="odom_lpf" pkg="trikey_base_controller" type="odom_lpf">
         <param name="lpf_alpha" value="$(arg alpha_value)"/>
         <param name="publsih_filtered_tf" value="$(arg publish_filtered_tf)"/>
 
@@ -50,7 +48,10 @@
 
         <param name="base_frame_id" value="$(arg base_frame_id)"/>
         <param name="filtered_odom_frame_id" value="$(arg filtered_icp_odom_frame_id)"/>
-      </node>
+      </node> -->
+
+      <node name="odom_filter" type="odom_filter" pkg="bumpybot_navigation"/>
+
 
     </group>
 
