@@ -24,7 +24,7 @@
 </include>
 
 <!-- Vel smoother -->
-<node name="velocity_smoother" pkg="bumpybot_teleop" type="velocity_smoother.py" />
+<!-- <node name="velocity_smoother" pkg="bumpybot_teleop" type="velocity_smoother.py" /> -->
 
   <!-- Rviz -->
  <group if ="$(arg rviz)">
