@@ -2,8 +2,8 @@
 
 <!-- Arguments -->
 <arg name ="teleop" default="true"/>
-<arg name="cmd_vel_topic" default="trikey/base_controller/cmd_vel" />
-<arg name="odom_topic" default="odom" />
+<arg name="cmd_vel_topic" default="/cmd_vel" />
+<arg name="odom_topic" default="odom_icp_filtered" />
 <arg name="base_frame" default="base_link"/>
 <arg name="odom_frame" default="odom"/>
 <arg name="scan" default="scan"/>
@@ -24,7 +24,7 @@
 </include>
 
 <!-- Vel smoother -->
-<!-- <node name="velocity_smoother" pkg="bumpybot_teleop" type="velocity_smoother.py" /> -->
+<node name="velocity_smoother" pkg="bumpybot_teleop" type="velocity_smoother.py" />
 
   <!-- Rviz -->
  <group if ="$(arg rviz)">
