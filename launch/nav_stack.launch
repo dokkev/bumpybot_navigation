@@ -1,0 +1,36 @@
+<launch>
+  <!-- Arguments -->
+
+    <arg name="map_file" default="$(find bumpybot_navigation)/maps/map.yaml"/>
+    <arg name ="teleop" default="false"/>
+    <arg name="cmd_vel_topic" default="cmd_vel" />
+    <arg name="odom_topic" default="odom" />
+    <arg name="base_frame" default="base_link"/>
+    <arg name="odom_frame" default="odom"/>
+    <arg name="scan" default="scan"/>
+    <arg name ="rviz" default="true"/>
+
+
+    <!-- Map server -->
+    <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+    <!-- AMCL -->
+    <include file="$(find bumpybot_navigation)/launch/amcl.launch"/>
+
+
+    <!-- Move Base -->
+    <include file="$(find bumpybot_navigation)/launch/move_base.launch">
+        <arg name="odom_topic" value="$(arg odom_topic)"/>
+        <arg name="cmd_vel_topic" value="$(arg cmd_vel_topic)"/>
+    </include>
+
+    <!-- Vel smoother -->
+    <node name="velocity_smoother" pkg="bumpybot_teleop" type="velocity_smoother.py" />
+
+    <!-- Rviz -->
+    <group if ="$(arg rviz)">
+        <node pkg="rviz" type="rviz" name="rviz" 
+            args="-d $(find bumpybot_navigation)/config/navigation.rviz"/>
+    </group>
+
+</launch>

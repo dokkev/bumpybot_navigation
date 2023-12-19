@@ -10,10 +10,10 @@
 
     <!-- Topic Name -->
     <arg name="icp_odom_topic" default="odom_icp"/>
-    <arg name="filtered_icp_odom_topic" default="odom_icp_filtered"/>
+    <arg name="filtered_icp_odom_topic" default="odom"/>
 
     <!-- Frame ID (TF Name) -->
-    <arg name="icp_odom_frame_id" default="odom_icp"/>
+    <arg name="icp_odom_frame_id" default="odom"/>
     <arg name="filtered_icp_odom_frame_id" default="odom"/>
     <arg name="base_frame_id" default="base_link"/>
     <arg name="publish_filtered_tf" default="true"/>
@@ -55,7 +55,7 @@
     <group unless="$(arg filter)">
       <!-- ICP Node -->
       <node pkg="rtabmap_odom" type="icp_odometry" name="icp_odometry">
-        <remap from="odom" to="$(arg icp_odom_topic)"/> <!-- ROSTOPIC: /odom => /odom_icp -->
+        <!-- <remap from="odom" to="$(arg icp_odom_topic)"/>  -->
         <param name="odom_frame_id" value="$(arg icp_odom_frame_id)"/>
         <param name="frame_id" value="$(arg base_frame_id)"/>
         <param name="publish_tf" value="true"/>
