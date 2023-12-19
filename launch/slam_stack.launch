@@ -1,9 +1,9 @@
 <launch>
 
 <!-- Arguments -->
-<arg name ="teleop" default="true"/>
-<arg name="cmd_vel_topic" default="/cmd_vel" />
-<arg name="odom_topic" default="odom_icp_filtered" />
+<arg name ="teleop" default="false"/>
+<arg name="cmd_vel_topic" default="cmd_vel" />
+<arg name="odom_topic" default="odom" />
 <arg name="base_frame" default="base_link"/>
 <arg name="odom_frame" default="odom"/>
 <arg name="scan" default="scan"/>
