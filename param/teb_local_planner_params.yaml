@@ -7,7 +7,7 @@ TebLocalPlannerROS:
   map_frame: map
       
   # Robot Configuration Parameters. X is forward direction for the Bumpybot.
-  max_vel_x: 0.15
+  max_vel_x: 0.3
   max_vel_y: 0.0
   max_vel_x_backwards: 0.15
   max_vel_y_backwards: 0.0
