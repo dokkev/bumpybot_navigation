@@ -15,6 +15,7 @@
 
     <!-- Frame ID (TF Name) -->
     <arg name="icp_odom_frame_id" default="odom"/>
+    <arg name="icp_odom_frame_id" default="odom"/>
     <arg name="filtered_icp_odom_frame_id" default="odom"/>
     <arg name="base_frame_id" default="base_link"/>
     <arg name="publish_filtered_tf" default="true"/>
@@ -27,7 +28,7 @@
 
 
 
-  <group if="$(arg noetic)"> 
+
     <group if="$(arg filter)">
 
       <!-- ICP Node -->
@@ -38,8 +39,6 @@
       </node>
 
       <!-- Load Params for odom_lpf node -->
-
-
       <!-- Filter Node -->
       <node name="odom_lpf" pkg="trikey_base_controller" type="odom_lpf">
         <param name="lpf_alpha" value="$(arg alpha_value)"/>
@@ -51,7 +50,7 @@
         <param name="base_frame_id" value="$(arg base_frame_id)"/>
         <param name="filtered_odom_frame_id" value="$(arg filtered_icp_odom_frame_id)"/>
       </node>
-
+      
     </group>
 
 
@@ -104,10 +103,6 @@
         <param name="publish_tf" value="true"/>
       </node>    
     </group>
-  </group>
-
-
-
 
 
 
