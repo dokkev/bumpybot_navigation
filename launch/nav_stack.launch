@@ -1,21 +1,28 @@
 <launch>
   <!-- Arguments -->
 
+    <!-- <arg name="map_file" default="$(find bumpybot_navigation)/maps/hcrl_inside.yaml"/> -->
     <arg name="map_file" default="$(find bumpybot_navigation)/maps/map.yaml"/>
     <arg name ="teleop" default="false"/>
     <arg name="cmd_vel_topic" default="cmd_vel" />
     <arg name="odom_topic" default="odom" />
     <arg name="base_frame" default="base_link"/>
     <arg name="odom_frame" default="odom"/>
-    <arg name="scan" default="scan"/>
+    <arg name="amcl_scan_input_topic" default="scan_filtered"/>
     <arg name ="rviz" default="true"/>
+
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain" output="screen" name="laser_filter">
+            <rosparam command="load" file="$(find bumpybot_navigation)/config/test_filter.xml" />
+    </node>
 
 
     <!-- Map server -->
     <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
 
     <!-- AMCL -->
-    <include file="$(find bumpybot_navigation)/launch/amcl.launch"/>
+    <include file="$(find bumpybot_navigation)/launch/amcl.launch">
+        <arg name="scan_input_topic" value="$(arg amcl_scan_input_topic)"/>
+    </include>
 
 
     <!-- Move Base -->

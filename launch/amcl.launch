@@ -1,12 +1,14 @@
 <launch>
   <!-- Arguments -->
-  <arg name="scan_topic"     default="scan"/>
+  <arg name="scan_input_topic"     default="scan_filtered"/>
   <arg name="initial_pose_x" default="0.0"/>
   <arg name="initial_pose_y" default="0.0"/>
   <arg name="initial_pose_a" default="0.0"/>
+  <arg name="laser_lower_threshold" default="0.35"/>
 
   <!-- AMCL -->
   <node pkg="amcl" type="amcl" name="amcl">
+    <!-- <remap from="scan" to="scan" /> -->
 
     <param name="min_particles"             value="500"/>
     <param name="max_particles"             value="3000"/>
@@ -22,8 +24,9 @@
     <param name="initial_pose_a"            value="$(arg initial_pose_a)"/>
     <param name="gui_publish_rate"          value="50.0"/>
 
-    <remap from="scan"                      to="$(arg scan_topic)"/>
+    <remap from="scan"                      to="$(arg scan_input_topic)"/>
     <param name="laser_max_range"           value="3.5"/>
+    <param name="laser_min_range"           value="$(arg laser_lower_threshold)"/>
     <param name="laser_max_beams"           value="180"/>
     <param name="laser_z_hit"               value="0.5"/>
     <param name="laser_z_short"             value="0.05"/>
@@ -40,7 +43,7 @@
     <param name="odom_alpha3"               value="0.1"/>
     <param name="odom_alpha4"               value="0.1"/>
     <param name="odom_frame_id"             value="odom"/>
-    <param name="base_frame_id"             value="base_link"/>
+    <param name="base_frame_id"             value="lidar_link"/>
 
   </node>
 </launch>
