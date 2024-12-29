@@ -6,8 +6,8 @@
 <arg name="xbox"                    default="false"/>
 <arg name="nodelets"                default="true"/>
 <arg name="tf_prefix"               default="" />
-<arg name="enable_slam"             default="false" />
-<arg name="noetic"                  default="false" />        <!-- Set to false if launching this in BumpyBot Comupter-->
+<arg name="enable_slam"             default="true" />
+<!-- <arg name="noetic"                  default="false" />        Set to false if launching this in BumpyBot Comupter -->
 <arg name="depth_registration"      default="true"      doc="Hardware depth registration" />
 <arg name="num_worker_threads"      default="4"         doc="Worker threads for the nodelet manager" />
 
@@ -21,7 +21,7 @@
 <arg name="depth_unit"              default="16UC1" />          <!-- Depth distance units. Options are: "32FC1" (32 bit float metre) or "16UC1" (16 bit integer millimetre) --> 
 <arg name="color_enabled"           default="true" />
 <arg name="color_format"            default="bgra" /> 
-<arg name="fps"                     default="15" />             <!-- FPS to run both cameras at. Valid options are 5, 15, and 30 -->
+<arg name="fps"                     default="5" />             <!-- FPS to run both cameras at. Valid options are 5, 15, and 30 -->
 <arg name="point_cloud"             default="false" />
 <arg name="rgb_point_cloud"         default="false" /> 
 <arg name="calibration_url"         default="" />               <!-- Load intrinsic calibration from specific URL (default: "file://$HOME/.ros/camera_info/"") -->    
@@ -41,10 +41,10 @@
 
 
 <!-- Trikey Base Controller -->
-<include file="$(find trikey_base_controller)/launch/trikey_base_controller.launch">
+<!-- <include file="$(find trikey_base_controller)/launch/trikey_base_controller.launch">
     <arg name="xbox" value="$(arg xbox)"/>
     <arg name="noetic" value="$(arg noetic)"/>
-</include>
+</include> -->
 
 <!-- Azure Kinect ROS Nodelets -->
 <group if="$(arg nodelets)">
