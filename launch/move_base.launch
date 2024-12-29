@@ -2,7 +2,7 @@
   <!-- Arguments -->
 
   <arg name="cmd_vel_topic" default="/trikey/base_controller/cmd_vel" />
-  <arg name="odom_topic" default="/odom" />
+  <arg name="odom_topic" default="/odom_icp_filtered" />
   <arg name="move_forward_only" default="false"/>
 
   <!-- move_base -->
@@ -16,6 +16,8 @@
     <rosparam file="$(find bumpybot_navigation)/param/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find bumpybot_navigation)/param/move_base_params.yaml" command="load" />
     <rosparam file="$(find bumpybot_navigation)/param/teb_local_planner_params.yaml" command="load" />
+        <param name="transform_tolerance" value="0.2"/>
+    <!-- <remap from="map" to="/grid_map"/> -->
     <!-- <rosparam file="$(find bumpybot_navigation)/param/dwa_local_planner_params.yaml" command="load" /> -->
     <!-- <rosparam file="$(find bumpybot_navigation)/param/base_local_planner_params.yaml" command="load" /> -->
     <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>

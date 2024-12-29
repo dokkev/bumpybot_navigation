@@ -7,7 +7,7 @@
   <arg name="noetic" default="true"/>
 
   <!-- Topic Name -->
-  <arg name="icp_odom_topic" default="odom"/>
+  <arg name="icp_odom_topic" default="odom_icp"/>
   <arg name="filtered_icp_odom_topic" default="odom_icp_filtered"/>
 
 
@@ -28,7 +28,15 @@
     <node pkg="rtabmap_odom" type="icp_odometry" name="icp_odometry">
       <remap from="odom" to="$(arg icp_odom_topic)"/> <!-- ROSTOPIC: /odom => /odom_icp -->
       <param name="frame_id" value="$(arg base_frame_id)"/>
+      <param name="guess_frame_id" value="base_link"/>
       <param name="publish_tf" value="false"/>
+      <remap from="scan" to="/merged_scan"/>
+      <remap from="imu" to="/imu_filtered"/>
+      <param name="wait_imu_to_init" value="false"/>
+      <param name="publish_null_when_lost" value="false"/>
+      <!-- <param name="deskewing_slerp" value="true"/> -->
+
+
     </node>
 
     <!-- Filter Node -->
@@ -41,6 +49,7 @@
       <param name="filtered_odom_frame_id" value="$(arg filtered_icp_odom_frame_id)"/>
     </node>
       
+
   </group>
 
   <group unless="$(arg filter)">
@@ -53,6 +62,7 @@
     </node>    
   </group>
 </group>
+
   <group unless="$(arg noetic)"> 
     <group if="$(arg filter)">
 
@@ -61,6 +71,11 @@
         <remap from="odom" to="$(arg icp_odom_topic)"/> <!-- ROSTOPIC: /odom => /odom_icp -->
         <param name="frame_id" value="$(arg base_frame_id)"/>
         <param name="publish_tf" value="false"/>
+          <remap from="scan" to="/merged_scan"/>
+          <remap from="ap" to="/imu_filtered"/>
+        <param name="wait_imu_to_init" value="false"/>
+
+
       </node>
 
       <!-- Filter Node -->
@@ -82,6 +97,10 @@
         <param name="odom_frame_id" value="$(arg icp_odom_frame_id)"/>
         <param name="frame_id" value="$(arg base_frame_id)"/>
         <param name="publish_tf" value="true"/>
+                  <remap from="scan" to="/merged_scan"/>
+         <remap from="imu" to="/imu_filtered"/>
+          <param name="wait_imu_to_init" value="false"/>
+
       </node>    
     </group>
 
