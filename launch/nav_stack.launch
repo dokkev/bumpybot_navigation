@@ -20,6 +20,10 @@
     <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
 
     <!-- AMCL -->
+        <!-- Load Last Known Pose -->
+         <rosparam file="$(find bumpybot_navigation)/config/last_known_pose.yaml" />
+
+
     <include file="$(find bumpybot_navigation)/launch/amcl.launch">
         <arg name="scan_input_topic" value="$(arg amcl_scan_input_topic)"/>
     </include>
@@ -30,6 +34,12 @@
         <arg name="odom_topic" value="$(arg odom_topic)"/>
         <arg name="cmd_vel_topic" value="$(arg cmd_vel_topic)"/>
     </include>
+
+    <!-- Pose Manager - (Used when restarting AMCL)-->
+<node pkg="bumpybot_navigation" type="pose_manager.py" name="pose_saver" output="screen">
+    <param name="package_name" value="bumpybot_navigation"/>
+  </node>
+
 
     <!-- Vel smoother -->
     <node name="velocity_smoother" pkg="bumpybot_teleop" type="velocity_smoother.py" />
